@@ -1,0 +1,23 @@
+/* Social Market – Admin Styles */
+
+#socialmarket-dashboard h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.socialmarket-box {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.socialmarket-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #0073aa;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+}
