@@ -1,0 +1,5 @@
+/* Social Market – Admin JS */
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('Social Market admin loaded');
+});
