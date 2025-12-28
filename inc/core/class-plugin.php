@@ -11,6 +11,8 @@ use Social_Market\Taxonomy\Tipo_Evento;
 use Social_Market\Taxonomy\Categorie_Organizzazione;
 
 use Social_Market\Admin\Admin_Menu;
+use Social_Market\Admin\Admin_Pages;
+use Social_Market\Admin\Admin_Columns;
 
 use Social_Market\Setup\Activation;
 use Social_Market\Setup\Setup_Wizard;
@@ -60,31 +62,33 @@ class Plugin {
      */
     private function init_hooks() {
 
-        // Load translations
+        // Traduzioni
         add_action( 'init', array( $this, 'load_textdomain' ) );
 
-        // Register CPTs and Taxonomies
+        // Registrazione CPT e Tassonomie
         add_action( 'init', array( $this, 'register_cpts' ), 5 );
         add_action( 'init', array( $this, 'register_taxonomies' ), 6 );
 
-        // Core systems
+        // Core
         Assets::init();
         Settings::init();
         Roles::init();
 
         // Admin
         Admin_Menu::init();
+        Admin_Pages::init();
+        Admin_Columns::init();
 
-        // Setup Wizard
+        // Setup
         Setup_Wizard::init();
 
-        // Integrations
+        // Integrazioni
         WC_Integration::init();
         Blocksy_Integration::init();
         Newspack_Integration::init();
 
-        // Future modules (newsletter, membership, logistics, events)
-        // will be initialized here.
+        // Moduli futuri (newsletter, membership, logistics, events)
+        // verranno inizializzati qui.
     }
 
     /**
