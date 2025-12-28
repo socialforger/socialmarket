@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Social Market\n"
+"Report-Msgid-Bugs-To: https://github.com/<tuo-utente>/socialmarket/issues\n"
+"POT-Creation-Date: 2025-01-01 00:00+0000\n"
+"PO-Revision-Date: 2025-01-01 00:00+0000\n"
+"Last-Translator: Marco <email@example.com>\n"
+"Language-Team: Italian\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Social Market\n"
+"X-Domain: socialmarket\n"
+
+# ---------------------------------------------------------
+# TEMPLATE: GAS
+# ---------------------------------------------------------
+
+#: templates/gas/archive-gas.php
+msgid "Gruppi di Acquisto Solidale"
+msgstr "Gruppi di Acquisto Solidale"
+
+#: templates/gas/archive-gas.php
+msgid "Nessun GAS trovato."
+msgstr "Nessun GAS trovato."
+
+#: templates/gas/single-gas.php
+msgid "Prossima Consegna"
+msgstr "Prossima Consegna"
+
+# ---------------------------------------------------------
+# TEMPLATE: ORGANIZZAZIONE
+# ---------------------------------------------------------
+
+#: templates/organizzazione/archive-organizzazione.php
+msgid "Organizzazioni"
+msgstr "Organizzazioni"
+
+#: templates/organizzazione/archive-organizzazione.php
+msgid "Nessuna organizzazione trovata."
+msgstr "Nessuna organizzazione trovata."
+
+# ---------------------------------------------------------
+# TEMPLATE: EVENTI
+# ---------------------------------------------------------
+
+#: templates/eventi/archive-eventi.php
+msgid "Eventi"
+msgstr "Eventi"
+
+#: templates/eventi/archive-eventi.php
+msgid "Nessun evento trovato."
+msgstr "Nessun evento trovato."
+
+#: templates/eventi/single-evento.php
+msgid "Calendario Eventi"
+msgstr "Calendario Eventi"
+
+# ---------------------------------------------------------
+# TEMPLATE: PUNTI DI RITIRO
+# ---------------------------------------------------------
+
+#: templates/punti-ritiro/archive-punto-ritiro.php
+msgid "Punti di Ritiro"
+msgstr "Punti di Ritiro"
+
+#: templates/punti-ritiro/archive-punto-ritiro.php
+msgid "Nessun punto di ritiro trovato."
+msgstr "Nessun punto di ritiro trovato."
+
+# ---------------------------------------------------------
+# PARTIALS
+# ---------------------------------------------------------
+
+#: templates/partials/loop-gas.php
+msgid "Nessun GAS disponibile."
+msgstr "Nessun GAS disponibile."
+
+#: templates/partials/loop-evento.php
+msgid "Nessun evento disponibile."
+msgstr "Nessun evento disponibile."
+
+#: templates/partials/calendario-eventi.php
+msgid "Il calendario eventi sarà disponibile prossimamente."
+msgstr "Il calendario eventi sarà disponibile prossimamente."
+
+#: templates/partials/form-newsletter.php
+msgid "Iscriviti alla Newsletter"
+msgstr "Iscriviti alla Newsletter"
+
+#: templates/partials/form-newsletter.php
+msgid "Email"
+msgstr "Email"
+
+#: templates/partials/form-newsletter.php
+msgid "Iscriviti"
+msgstr "Iscriviti"
+
+#: templates/partials/blocco-prossima-consegna.php
+msgid "Le informazioni sulla prossima consegna saranno disponibili prossimamente."
+msgstr "Le informazioni sulla prossima consegna saranno disponibili prossimamente."
+
+# ---------------------------------------------------------
+# CORE / ADMIN (stringhe base)
+# ---------------------------------------------------------
+
+msgid "Impostazioni"
+msgstr "Impostazioni"
+
+msgid "Salva modifiche"
+msgstr "Salva modifiche"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Sistema"
+msgstr "Sistema"
+
+msgid "Newsletter"
+msgstr "Newsletter"
+
+msgid "Logistica"
+msgstr "Logistica"
+
+msgid "Eventi"
+msgstr "Eventi"
+
+msgid "Punti di Ritiro"
+msgstr "Punti di Ritiro"
+
+msgid "Organizzazioni"
+msgstr "Organizzazioni"
+
+msgid "GAS"
+msgstr "GAS"
+
+msgid "Fornitori"
+msgstr "Fornitori"
