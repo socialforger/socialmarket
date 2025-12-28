@@ -15,6 +15,10 @@ use Social_Market\Admin\Admin_Menu;
 use Social_Market\Setup\Activation;
 use Social_Market\Setup\Setup_Wizard;
 
+use Social_Market\Integrations\WC_Integration;
+use Social_Market\Integrations\Blocksy_Integration;
+use Social_Market\Integrations\Newspack_Integration;
+
 use Social_Market\Assets;
 use Social_Market\Settings;
 use Social_Market\Roles;
@@ -73,6 +77,11 @@ class Plugin {
 
         // Setup Wizard
         Setup_Wizard::init();
+
+        // Integrations
+        WC_Integration::init();
+        Blocksy_Integration::init();
+        Newspack_Integration::init();
 
         // Future modules (newsletter, membership, logistics, events)
         // will be initialized here.
