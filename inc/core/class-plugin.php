@@ -11,6 +11,9 @@ use Social_Market\Taxonomy\Tipo_Evento;
 
 use Social_Market\Admin\Admin_Menu;
 
+use Social_Market\Setup\Activation;
+use Social_Market\Setup\Setup_Wizard;
+
 use Social_Market\Assets;
 use Social_Market\Settings;
 use Social_Market\Roles;
@@ -43,12 +46,12 @@ class Plugin {
     }
 
     /**
-     * Private constructor.
+     * Private constructor to enforce singleton.
      */
     private function __construct() {}
 
     /**
-     * Initialize plugin hooks.
+     * Initialize all plugin hooks.
      */
     private function init_hooks() {
 
@@ -64,8 +67,11 @@ class Plugin {
         Settings::init();
         Roles::init();
 
-        // Admin menu
+        // Admin
         Admin_Menu::init();
+
+        // Setup Wizard
+        Setup_Wizard::init();
 
         // Future modules (newsletter, membership, logistics, events)
         // will be initialized here.
@@ -104,10 +110,7 @@ class Plugin {
      * Plugin activation logic.
      */
     public function activate() {
-        $this->register_cpts();
-        $this->register_taxonomies();
-        Roles::init();
-        flush_rewrite_rules();
+        Activation::run();
     }
 
     /**
