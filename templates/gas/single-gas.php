@@ -1,7 +1,7 @@
 <?php
 /**
  * Template: Singolo GAS
- * Override path: yourtheme/social-market/gas/single-gas.php
+ * Override path: wp-content/plugins/socialmarket/templates/gas/archive-gas.php
  */
 
 get_header();
