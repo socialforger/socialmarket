@@ -1,0 +1,26 @@
+/* Social Market – Frontend Styles */
+
+.sm-event {
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.sm-event h3 {
+    margin-top: 0;
+}
+
+.sm-gas-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.sm-punto-ritiro {
+    padding: 15px;
+    border-left: 4px solid #0073aa;
+    background: #f9f9f9;
+    margin-bottom: 20px;
+}
