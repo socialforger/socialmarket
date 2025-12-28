@@ -1,7 +1,12 @@
 <?php
 /**
  * Template: Archivio GAS
- * Override path: wp-content/plugins/socialmarket/templates/gas/archive-gas.php
+ *
+ * Percorso nel plugin:
+ *   wp-content/plugins/socialmarket/templates/gas/archive-gas.php
+ *
+ * Override nel tema:
+ *   wp-content/themes/tuo-tema/socialmarket/gas/archive-gas.php
  */
 
 get_header();
