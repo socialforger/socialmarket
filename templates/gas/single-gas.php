@@ -1,7 +1,12 @@
 <?php
 /**
  * Template: Singolo GAS
- * Override path: wp-content/plugins/socialmarket/templates/gas/archive-gas.php
+ *
+ * Percorso nel plugin:
+ *   wp-content/plugins/socialmarket/templates/gas/single-gas.php
+ *
+ * Override nel tema:
+ *   wp-content/themes/tuo-tema/socialmarket/gas/single-gas.php
  */
 
 get_header();
@@ -17,7 +22,7 @@ get_header();
 
     <div class="sm-meta sm-gas-meta">
         <?php
-        // Qui in futuro potremo aggiungere:
+        // Spazio per:
         // - membri del GAS
         // - sessioni di ritiro
         // - prossima consegna
