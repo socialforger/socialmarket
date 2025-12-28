@@ -8,6 +8,7 @@ use Social_Market\CPT\Punto_Ritiro;
 use Social_Market\CPT\Fornitore;
 
 use Social_Market\Taxonomy\Tipo_Evento;
+use Social_Market\Taxonomy\Categorie_Organizzazione;
 
 use Social_Market\Admin\Admin_Menu;
 
@@ -46,12 +47,12 @@ class Plugin {
     }
 
     /**
-     * Private constructor to enforce singleton.
+     * Private constructor.
      */
     private function __construct() {}
 
     /**
-     * Initialize all plugin hooks.
+     * Initialize plugin hooks.
      */
     private function init_hooks() {
 
@@ -104,6 +105,7 @@ class Plugin {
      */
     public function register_taxonomies() {
         Tipo_Evento::register();
+        Categorie_Organizzazione::register();
     }
 
     /**
