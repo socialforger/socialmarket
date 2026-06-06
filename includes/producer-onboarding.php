@@ -11,22 +11,19 @@ class SM_Producer_Onboarding {
     private function carica_province_da_json() {
         $json_path = plugin_dir_path( dirname( __FILE__ ) ) . 'data/province.json';
         if ( file_exists( $json_path ) ) {
-            $json_data = file_get_contents( $json_path );
-            return json_decode( $json_data, true );
+            return json_decode( file_get_contents( $json_path ), true );
         }
         return array();
     }
 
-    /**
-     * ⚙️ PROCESSORE DI SALVATAGGIO IN METADATI
-     */
     public function salva_province_logistica_produttore() {
         if ( ! is_user_logged_in() ) return;
         
         if ( isset( $_POST['sm_produttore_badge_nonce'] ) && wp_verify_nonce( $_POST['sm_produttore_badge_nonce'], 'sm_save_produttore_badges' ) ) {
             $user_id = get_current_user_id();
+            $user = wp_get_current_user();
 
-            if ( current_user_can( 'vendor' ) || current_user_can( 'manage_woocommerce' ) ) {
+            if ( in_array( 'author', $user->roles ) || current_user_can( 'manage_woocommerce' ) ) {
                 $province_scelte = isset( $_POST['sm_logistic_provinces'] ) ? array_map( 'sanitize_text_field', $_POST['sm_logistic_provinces'] ) : array();
                 
                 $province_totali = $this->carica_province_da_json();
@@ -34,7 +31,8 @@ class SM_Producer_Onboarding {
                     return array_key_exists( $sigla, $province_totali );
                 });
 
-                update_user_meta( $user_id, 'sm_producer_coverage_areas', array_values($province_filtrate) );
+                // Salvataggio nel campo nativo dei paesi di spedizione di WooCommerce
+                update_user_meta( $user_id, 'shipping_countries', array_values($province_filtrate) );
                 
                 set_transient( 'sm_producer_save_success_' . $user_id, true, 30 );
                 wp_redirect( $_SERVER['REQUEST_URI'] );
@@ -43,18 +41,17 @@ class SM_Producer_Onboarding {
         }
     }
 
-    /**
-     * 🎨 RENDERING INTERFACCIA AGGIORNATA
-     */
     public function renderizza_pannello_logistica_produttore() {
         if ( ! is_user_logged_in() ) return '<p>Effettua il login per gestire la tua logistica.</p>';
         
         $user_id = get_current_user_id();
-        if ( ! current_user_can( 'vendor' ) && ! current_user_can( 'manage_woocommerce' ) ) {
+        $user = wp_get_current_user();
+
+        if ( ! in_array( 'author', $user->roles ) && ! current_user_can( 'manage_woocommerce' ) ) {
             return '<p>Accesso riservato ai Produttori Agricoli della rete.</p>';
         }
 
-        $province_salvate = get_user_meta( $user_id, 'sm_producer_coverage_areas', true );
+        $province_salvate = get_user_meta( $user_id, 'shipping_countries', true );
         if ( ! is_array( $province_salvate ) ) {
             $province_salvate = array();
         }
@@ -72,15 +69,11 @@ class SM_Producer_Onboarding {
             <h3 style="margin-top:0; color:#2f855a;">🚛 Dove operi con i tuoi prodotti?</h3>
             <p style="color:#4a5568; font-size:14px; margin-bottom:25px;">Indica i territori in cui sei in grado di distribuire la merce. I tuoi prodotti appariranno nello shop dei soci residenti esclusivamente nelle zone che aggiungerai a questa lista.</p>
             
-            <!-- CONTROLLI AD AZIONE SEQUENZIALE CON I NUOVI TESTI -->
             <div style="margin-bottom: 25px; min-height: 50px; display: flex; align-items: center;">
-                
-                <!-- 1. BOTTONE AGGIORNATO CON LA TUA DICITURA -->
                 <button type="button" id="sm_trigger_add_btn" style="background: #2b6cb0; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 8px; transition: background 0.2s;">
                     ➕ Aggiungi provincia dove operi
                 </button>
 
-                <!-- 2. TENDINA DI SCELTA CONTESTUALE -->
                 <select id="sm_dropdown_province" style="width: 100%; padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; background: #fff; font-size: 14px; height: 46px; display: none;">
                     <option value="">Seleziona la provincia dal listino...</option>
                     <?php foreach ( $all_province as $sigla => $nome ) : ?>
@@ -89,19 +82,14 @@ class SM_Producer_Onboarding {
                         </option>
                     <?php endforeach; ?>
                 </select>
-                
             </div>
 
-            <!-- FORM DI SALVATAGGIO -->
             <form method="POST" action="">
                 <?php wp_nonce_field( 'sm_save_produttore_badges', 'sm_produttore_badge_nonce' ); ?>
                 
                 <h4 style="margin-bottom: 12px; color: #4a5568; font-size: 14px; font-weight: bold;">Le tue province di operatività attive:</h4>
                 
-                <!-- CONTENITORE DEI BADGES -->
-                <div id="sm_badges_container" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 15px; border: 1px solid #cbd5e0; border-radius: 6px; background: #f7fafc; min-height: 60px; margin-bottom: 25px; align-items: center;">
-                    <!-- Gestito via JS -->
-                </div>
+                <div id="sm_badges_container" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 15px; border: 1px solid #cbd5e0; border-radius: 6px; background: #f7fafc; min-height: 60px; margin-bottom: 25px; align-items: center;"></div>
 
                 <button type="submit" style="background: #2f855a; color: white; border: none; width: 100%; padding: 12px; font-weight: bold; border-radius: 6px; font-size:16px; cursor:pointer;">
                     Salva Province Operative
