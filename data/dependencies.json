@@ -1,0 +1,90 @@
+{
+  "woocommerce/woocommerce.php": {
+    "name": "WooCommerce",
+    "required": true
+  },
+  "wallet-system-for-woocommerce/wallet-system-for-woocommerce.php": {
+    "name": "Wallet System For WooCommerce",
+    "required": true
+  },
+  "customize-my-account-page-for-woocommerce/customize-my-account-page-for-woocommerce.php": {
+    "name": "Customize My Account Page For WooCommerce",
+    "required": false
+  },
+  "delivery-drivers-manager/delivery-drivers-manager.php": {
+    "name": "Delivery Drivers Manager",
+    "required": false
+  },
+  "donation-platform-for-woocommerce/donation-platform-for-woocommerce.php": {
+    "name": "Donation Platform for WooCommerce: Fundraising & Donation Management",
+    "required": false
+  },
+  "import-users-from-csv/import-users-from-csv.php": {
+    "name": "Import Users from CSV",
+    "required": false
+  },
+  "local-delivery-drivers-for-woocommerce/local-delivery-drivers-for-woocommerce.php": {
+    "name": "Local Delivery Drivers for WooCommerce",
+    "required": false
+  },
+  "login-me-now/login-me-now.php": {
+    "name": "Login Me Now",
+    "required": false
+  },
+  "mailerpress/mailerpress.php": {
+    "name": "MailerPress",
+    "required": false
+  },
+  "membership-for-woocommerce/membership-for-woocommerce.php": {
+    "name": "Membership For WooCommerce",
+    "required": false
+  },
+  "order-picking-for-woocommerce/order-picking-for-woocommerce.php": {
+    "name": "Order Picking For WooCommerce",
+    "required": false
+  },
+  "woocommerce-pdf-invoices-packing-slips/wpovernight-woocommerce-pdf-invoices-packingslips.php": {
+    "name": "PDF Invoices & Packing Slips for WooCommerce",
+    "required": false
+  },
+  "woo-pdf-invoices-italian-add-on/woo-pdf-invoices-italian-add-on.php": {
+    "name": "PDF Invoices Italian Add-on for WooCommerce",
+    "required": false
+  },
+  "order-delivery-scheduler-for-woocommerce/order-delivery-scheduler-for-woocommerce.php": {
+    "name": "PowerfulWP – Order Delivery Scheduler for WooCommerce",
+    "required": false
+  },
+  "product-import-export-for-woocommerce/product-import-export-for-woocommerce.php": {
+    "name": "Product Import Export for WooCommerce",
+    "required": false
+  },
+  "points-and-rewards-for-woocommerce/points-and-rewards-for-woocommerce.php": {
+    "name": "Punti e premi per WooCommerce",
+    "required": false
+  },
+  "shipping-packages-for-woocommerce/shipping-packages-for-woocommerce.php": {
+    "name": "Shipping Packages for WooCommerce",
+    "required": false
+  },
+  "super-progressive-web-apps/super-pwa.php": {
+    "name": "Super Progressive Web Apps",
+    "required": false
+  },
+  "wp-all-export/wp-all-export.php": {
+    "name": "WP All Export",
+    "required": false
+  },
+  "wp-all-import/wp-all-import.php": {
+    "name": "WP All Import",
+    "required": false
+  },
+  "wp-all-import-woocommerce-add-on/wp-all-import-woocommerce-add-on.php": {
+    "name": "WP All Import - WooCommerce Add-On",
+    "required": false
+  },
+  "wp-esg/wp-esg.php": {
+    "name": "WP ESG",
+    "required": false
+  }
+}
